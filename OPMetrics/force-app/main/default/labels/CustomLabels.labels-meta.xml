@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ErrorChartData</fullName>
+        <categories>OPMetric</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error in chart</shortDescription>
+        <value>Unable to load chart.</value>
+    </labels>
+    <labels>
+        <fullName>ErrorFiscalData</fullName>
+        <categories>OPMetric</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error in fiscal data</shortDescription>
+        <value>Unable to load fiscal Data.</value>
+    </labels>
+    <labels>
+    <fullName>ErrorNoDataSelectedYear</fullName>
+        <categories>OPMetric</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>no data found</shortDescription>
+        <value>No data found for selected year.</value>
+    </labels>
+    <labels>
+    <fullName>SelectFiscalYear</fullName>
+        <categories>OPMetric</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select fiscal year</shortDescription>
+        <value>Select fiscal year.</value>
+    </labels>
+</CustomLabels>

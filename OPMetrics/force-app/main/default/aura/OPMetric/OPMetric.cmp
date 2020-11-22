@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="GLOBAL" controller="OPMetricsController">
+    <aura:attribute name="selFiscalYear"    type="Integer" 	access="private"/>
+    <aura:attribute name="fiscalYears"      type="List" 	access="private"/>
+    <aura:attribute name="title" 			type="String" 	access="GLOBAL"	default="Oppotunity Metrics - FY "/>
+    <aura:handler   name="init"             value="{!this}" action="{!c.init}"/>
+
+    <lightning:card>
+        <aura:set attribute="title">
+            <lightning:icon iconName="standard:opportunity" size="small"/>
+            &nbsp;{! v.title } {!v.selFiscalYear}
+        </aura:set>
+        <aura:set attribute="actions">
+            <lightning:select label="Primary" variant="label-hidden" value="{!v.selFiscalYear}"
+                                aura:id="field" onchange="{! c.onChange }">
+                <option text="None" value=""/>
+                <aura:iteration items="{!v.fiscalYears}" var="fiscalYear">
+                    <option value="{!fiscalYear.FiscalYearSettings.Name}">{!fiscalYear.FullyQualifiedLabel}</option>
+                </aura:iteration>
+            </lightning:select>
+        </aura:set>
+        <div class="spinnerContainer">
+            <lightning:spinner aura:id="spinner" variant="brand" size="medium" class="slds-hide" />
+        </div>
+        <lightning:layout>
+            <lightning:layoutItem padding="around-small" flexibility="auto">
+                <c:Chart aura:id="chartComp"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>
